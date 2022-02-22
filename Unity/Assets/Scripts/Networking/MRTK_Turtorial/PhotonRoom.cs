@@ -1,3 +1,4 @@
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
@@ -56,6 +57,24 @@ namespace Assets.Scripts.Networking.MRTK_Turtorial
             {
                 if (photonUserPrefab != null) pool.ResourceCache.Add(photonUserPrefab.name, photonUserPrefab);
             }
+        }
+
+        public static void AddCustomProperty(object key, object value)
+        {
+            var customProperties = PhotonNetwork.CurrentRoom.CustomProperties;
+            if (customProperties == null)
+            {
+                customProperties = new Hashtable { { key, value } };
+            }
+            else if (customProperties[key] == null)
+            {
+                customProperties.Add(key, value);
+            }
+            else
+            {
+                customProperties[key] = value;
+            }
+            PhotonNetwork.CurrentRoom.SetCustomProperties(customProperties);
         }
 
         public override void OnJoinedRoom()
