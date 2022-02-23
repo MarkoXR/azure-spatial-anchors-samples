@@ -640,6 +640,9 @@ GameObject:
   - component: {fileID: 294771743}
   - component: {fileID: 294771744}
   - component: {fileID: 294771742}
+  - component: {fileID: 294771747}
+  - component: {fileID: 294771746}
+  - component: {fileID: 294771745}
   m_Layer: 0
   m_Name: AzureSpatialAnchors
   m_TagString: Untagged
@@ -695,7 +698,43 @@ MonoBehaviour:
   anchoredObjectPrefab: {fileID: 1147623660883556, guid: e593bfccf03b6444da88c7591f906ba8,
     type: 3}
   cloudManager: {fileID: 294771742}
-  baseSharingUrl: 
+  baseSharingUrl: https://notUsed.azurewebsites.net
+--- !u!114 &294771745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294771741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354532518a3834348a0df0e4909ce564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &294771746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294771741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c48f236ea1dd6c48982f619816ddcc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &294771747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294771741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be9b99cad8e77f74c9d1983995f93812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &339971469
 GameObject:
   m_ObjectHideFlags: 0

@@ -57,9 +57,7 @@ namespace Microsoft.Azure.SpatialAnchors.Unity.Examples
             { AppState.DemoStepComplete,new DemoStepParams() { StepMessage = "Next: Restart demo", StepColor = Color.clear }}
         };
 
-        #if !UNITY_EDITOR
-        public AnchorExchanger anchorExchanger = new AnchorExchanger();
-        #endif
+        public AnchorExchangerPhoton anchorExchangerPhoton = new AnchorExchangerPhoton();
 
         #region Member Variables
         private AppState _currentAppState = AppState.DemoStepChooseFlow;
@@ -174,9 +172,7 @@ namespace Microsoft.Azure.SpatialAnchors.Unity.Examples
                 }
             }
 
-            #if !UNITY_EDITOR
-            anchorExchanger.WatchKeys(BaseSharingUrl);
-            #endif
+            anchorExchangerPhoton.WatchKeys(BaseSharingUrl);
 
             feedbackBox.text = stateParams[currentAppState].StepMessage;
 
@@ -256,9 +252,7 @@ namespace Microsoft.Azure.SpatialAnchors.Unity.Examples
 
             localAnchorIds.Add(currentCloudAnchor.Identifier);
 
-#if !UNITY_EDITOR
-            anchorNumber = (await anchorExchanger.StoreAnchorKey(currentCloudAnchor.Identifier));
-#endif
+            anchorNumber = (await anchorExchangerPhoton.StoreAnchorKey(currentCloudAnchor.Identifier));
 
             AttachTextMesh(spawnedObject, anchorNumber);
 
@@ -338,9 +332,7 @@ namespace Microsoft.Azure.SpatialAnchors.Unity.Examples
                 else
                 {
                     _anchorNumberToFind = anchorNumber;
-                    #if !UNITY_EDITOR
-                    _anchorKeyToFind = await anchorExchanger.RetrieveAnchorKey(_anchorNumberToFind.Value);
-                    #endif
+                    _anchorKeyToFind = await anchorExchangerPhoton.RetrieveAnchorKey(_anchorNumberToFind.Value);
                     if (_anchorKeyToFind == null)
                     {
                         feedbackBox.text = "Anchor Number Not Found!";
